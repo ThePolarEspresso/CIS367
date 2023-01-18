@@ -1,11 +1,3 @@
-/*
-triangle.js
-Erik Fredericks, c/o Ed Angel
-
-This file does the actual drawing of the triangle
-*/
-
-// Global variables we'll need
 var gl;
 var points;
 
