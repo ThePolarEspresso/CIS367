@@ -4,6 +4,8 @@ var points;
 var theta = 0.0;
 var thetaLoc;
 
+var delay = 100;
+
 // This function executes our WebGL code AFTER the window is loaded.
 // Meaning, that we wait for our canvas element to exist.
 window.onload = function init() {
@@ -39,19 +41,21 @@ window.onload = function init() {
     gl.vertexAttribPointer(vPosition, 2, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(vPosition);
 
-    thetaLoc = gl.getUniformLocation( program, "theta" );
+    thetaLoc = gl.getUniformLocation(program, "theta");
 
     render();
 };
 
 // Render whatever is in our gl variable
 function render() {
-    gl.clear(gl.COLOR_BUFFER_BIT);
+    setTimeout(function () {
+        gl.clear(gl.COLOR_BUFFER_BIT);
 
-    theta += 0.1;
-    gl.uniform1f( thetaLoc, theta );
+        theta += 0.1;
+        gl.uniform1f(thetaLoc, theta);
 
-    gl.drawArrays(gl.TRIANGLES, 0, 3);
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
 
-    window.requestAnimFrame(render);
+        window.requestAnimFrame(render);
+    }, delay)
 }
