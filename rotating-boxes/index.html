@@ -10,7 +10,7 @@
             padding: 0px;
         }
     </style>
-    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-moduleshims.js"></script>
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
     <script type="importmap">
         {
             "imports": {
@@ -38,12 +38,12 @@
         let boxDepth = 1;
         let textureLoader = new THREE.TextureLoader();
 
-        let grass = textureLoader.load('grass1.png');
+        let grass = textureLoader.load('grass1.webp');
         grass.wrapS = THREE.RepeatWrapping;
         grass.wrapT = THREE.RepeatWrapping;
         grass.repeat.set(floorWidth / 2, floorHeight / 2);
 
-        let stone = textureLoader.load('stone wall 4.png');
+        let stone = textureLoader.load('stone wall 4.webp');
         stone.wrapS = THREE.RepeatWrapping;
         stone.wrapT = THREE.RepeatWrapping;
         stone.repeat.set(boxWidth / 2, boxHeight / 2);
