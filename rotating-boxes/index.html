@@ -30,6 +30,13 @@
 
         const renderer = new THREE.WebGLRenderer();
 
+        // add torus
+        const geometry = new THREE.TorusGeometry( 1, .5, 16, 100 );
+        const material = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+        const torus = new THREE.Mesh( geometry, material );
+        torus.position.set(0, 0, -5);
+        scene.add( torus );
+
         // Load Textures
         let floorWidth = 20;
         let floorHeight = 40;
@@ -115,6 +122,7 @@
         function animate() {
             for (let i = 0; i < boxes.length; i++) {
                 boxes[i].rotateX(Math.PI / (100 + i));
+                torus.rotateY(Math.PI / (1000 + i));
             }
 
             requestAnimationFrame(animate);
